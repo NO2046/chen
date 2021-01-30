@@ -1,9 +1,9 @@
 <template>
   <div class="page1">
+    <div class="title1">
+      {{ $t("appName") }}
+    </div>
     <div class="content">
-      <div class="title1">
-        {{ $t("appName") }}
-      </div>
       <div class="title2">
         {{ $t("t2") }}
       </div>
@@ -19,26 +19,34 @@
         </div>
       </div>
       <div class="inputWrap">
-        <div class="inputItem">
+        <!-- <div class="inputItem">
           <input :placeholder="$t('p1')" type="text" />
         </div>
         <div class="inputItem">
           <input :placeholder="$t('p2')" type="text" />
-        </div>
+        </div> -->
+
+        <Form ref="formInline" :model="formInline" :rules="ruleInline" inline style="width:100%;">
+          <FormItem prop="phone" style="width:100%;">
+            <Input type="text" v-model="formInline.phone" :placeholder="$t('p1')"> </Input>
+          </FormItem>
+          <FormItem prop="password" style="width:100%;">
+            <Input type="password" v-model="formInline.password" :placeholder="$t('p2')"> </Input>
+          </FormItem>
+        </Form>
       </div>
 
       <div class="btns flex1">
-        <div class="btn">
+        <div class="btn" @click="handleSubmit('formInline', 'login')">
           {{ $t("login") }}
         </div>
-        <div class="btn">
+        <div class="btn" @click="handleSubmit('formInline', 'register')">
           {{ $t("register") }}
         </div>
       </div>
       <div class="info">
         {{ $t("info") }}
       </div>
-
     </div>
   </div>
 </template>
@@ -51,6 +59,40 @@ export default {
   name: "Home",
   components: {
     HelloWorld,
+  },
+  data() {
+    return {
+      formInline: {
+        phone: "1231231231",
+        password: "123",
+      },
+      ruleInline: {
+        phone: [
+          { required: true, message: this.$t("p11"), trigger: "change" },
+          { type: "string", min: 10, message: this.$t("p11"), trigger: "change" },
+        ],
+        password: [
+          { required: true, message: this.$t("p22"), trigger: "change" },
+          // { type: "string", min: 6, message: "The password length cannot be less than 6 bits", trigger: "blur" },
+        ],
+      },
+    };
+  },
+  methods: {
+    handleSubmit(name, type) {
+      this.$refs[name].validate((valid) => {
+        if (valid) {
+          if(type === 'login'){
+            this.$Message.success(this.$t("p3"));
+          }else{
+            this.$Message.success(this.$t("p4"));
+          }
+          this.$router.push('/apply')
+        } else {
+          // this.$Message.error("Fail!");
+        }
+      });
+    },
   },
 };
 </script>
@@ -94,10 +136,10 @@ export default {
 
   .inputWrap {
     width: 80%;
-    margin:36px auto 18px;
+    margin: 36px auto;
   }
 
-  .inputItem{
+  .inputItem {
     display: flex;
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -106,30 +148,30 @@ export default {
     line-height: 1.429;
     background-color: #fff;
     position: relative;
-    
+
     margin: 12px auto;
+    border-radius: 4px;
   }
 
-  input {
-    display: block;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-    width: 100%;
-    min-width: 0;
-    padding: 8px;
-    box-sizing: border-box;
-    color: #666;
-    line-height: inherit;
-    background-color: inherit;
-    border-radius: 2px;
-    outline: none;
-    border: none;
-  }
-  input:focus {
-    border-color: #fc9153;
-  }
-
+  // input {
+  //   display: block;
+  //   -webkit-box-flex: 1;
+  //   -webkit-flex: 1;
+  //   flex: 1;
+  //   width: 100%;
+  //   min-width: 0;
+  //   padding: 8px;
+  //   box-sizing: border-box;
+  //   color: #666;
+  //   line-height: inherit;
+  //   background-color: inherit;
+  //   border-radius: 2px;
+  //   outline: none;
+  //   border: none;
+  // }
+  // input:focus {
+  //   border-color: #fc9153;
+  // }
 
   .btns {
     width: 80%;
@@ -140,6 +182,5 @@ export default {
     font-size: 14px;
     text-align: center;
   }
-
 }
 </style>

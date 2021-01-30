@@ -6,6 +6,7 @@
         {{ $t("f1") }}
       </div>
     </div>
+    <div class="bar"></div>
 
     <div class="card">
       <div class="passTitle2">
@@ -29,7 +30,7 @@
       <div class="passLine"></div>
       <div class="passTitle2">{{ $t("f8") }} <span>5% </span></div>
       <div class="passLine"></div>
-      <div class="passTitle2">
+      <div class="passTitle2" style="font-size:14px;">
         {{ $t("f9") }}
       </div>
       <div style="text-align:center;padding:6px 0 12px;">
@@ -76,6 +77,13 @@ export default {
     background: #ebe8e8;
     height: 1px;
     width: 100%;
+  }
+
+  .bar{
+    height:10px;border-radius: 5px;
+    background:rgba(244,246,245);
+    position: absolute;
+    top:-5px;
   }
 
   .passTitle {

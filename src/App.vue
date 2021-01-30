@@ -37,6 +37,7 @@
     background: #fff;
     margin: 0 auto 16px;
     width: 90%;
+    position: relative;
   }
 
     .btn {
@@ -55,9 +56,9 @@
     transition: opacity 0.2s;
     -webkit-appearance: none;
 
-    background-color: #ff976a;
-    border: 1px solid #ff976a;
-
+    // background-color: #ff976a ;
+    // border: 1px solid #ff976a;
+    background:linear-gradient(to right,rgba(245,182,86),rgba(235,215,86),rgba(245,182,86));
     border-radius: 999px;
 
     width: 120px;

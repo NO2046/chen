@@ -83,7 +83,7 @@
     </div>
     <div class="card flex2">
       <div style="width:100%;margin-bottom:8px;">
-        <div class="pTitle2">{{ $t("d2") }} 3</div>
+        <div class="pTitle2">{{ $t("d2") }} 4</div>
       </div>
 
       <div class="line"></div>
@@ -131,21 +131,21 @@ export default {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    padding: 80px 0 24px;
+    padding: 60px 0 24px;
   }
 
 
 
   .cardContent {
     text-align: center;
-    padding: 12px 0px;
-    width: 98%;
+    padding: 8px 0px;
+    width: 95%;
   }
 
   .pTitle2 {
     background: #b0c9fa;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 16px;
     color: rgba(56, 55, 55);
     font-weight: bold;
     line-height: 1.5;
@@ -174,7 +174,7 @@ export default {
   .line {
     background: #ebe8e8;
     height: 1px;
-    width: 98%;
+    width: 95%;
   }
   .pTip{
     color:#fff;

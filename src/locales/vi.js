@@ -5,11 +5,15 @@ export default {
   c2:'Đăng ký vay luôn bị từ chối',
   c3:'Lãi suất vay quá cao',
   p1:'Nhập số điện thoại di động',
+  p11:'Vui lòng điền đúng số điện thoại',
   p2:'Nhập mật khẩu',
+  p22:'Vui lòng điền mật khẩu',
   login:'Đăng nhập',
   register:'Đăng ký',
   info:'Đăng ký ngay, giúp bạn giải quyết vấn đề',
   info2:'Chúng tôi hợp tác chiến lược cùng các app lớn cung cấp dịch vụ cá nhân cho bạn',
+  p3:'Đăng nhập thành công',
+  p4:'Đăng ký thành công',
 
 
   // page2 
