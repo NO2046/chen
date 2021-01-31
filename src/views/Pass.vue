@@ -51,6 +51,9 @@
 
 export default {
   name: "Pass",
+  mounted(){
+    
+  }
 };
 </script>
 

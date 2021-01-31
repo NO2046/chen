@@ -6,7 +6,7 @@ import vi from './vi'
 Vue.use(VueI18n)
 
 const i18n = new VueI18n({
-    locale: localStorage.getItem('locale') || 'vi',
+    locale: localStorage.getItem('locale') || 'zh',
     messages:{
         zh,vi
     }

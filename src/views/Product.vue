@@ -24,7 +24,7 @@
             5%
           </div>
         </div>
-        <div class="pBtn">
+        <div @click="toPass('1')" class="pBtn">
           {{ $t("d5") }}
         </div>
       </div>
@@ -50,7 +50,7 @@
             4%
           </div>
         </div>
-        <div class="pBtn">
+        <div class="pBtn"  @click="toPass('2')">
           {{ $t("d5") }}
         </div>
       </div>
@@ -76,7 +76,7 @@
             3%
           </div>
         </div>
-        <div class="pBtn">
+        <div class="pBtn"  @click="toPass('3')">
           {{ $t("d5") }}
         </div>
       </div>
@@ -99,10 +99,10 @@
             {{ $t("d4") }}
           </div>
           <div class="per">
-            3%
+            2%
           </div>
         </div>
-        <div class="pBtn">
+        <div class="pBtn"  @click="toPass('4')">
           {{ $t("d5") }}
         </div>
       </div>
@@ -118,6 +118,12 @@
 
 export default {
   name: "Apply",
+  methods:{
+    toPass(value){
+      localStorage.setItem('p', value)
+      this.$router.push(`/pass?p=${value}`)
+    }
+  }
 };
 </script>
 

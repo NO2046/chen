@@ -2,7 +2,7 @@
   <div class="page2">
     <div class="content">
       <div class="formWrap">
-        <div class="inputItem">
+        <!-- <div class="inputItem">
           <input :placeholder="$t('a1')" type="text" />
         </div>
         <div class="inputItem">
@@ -22,13 +22,36 @@
         </div>
         <div class="inputItem">
           <input :placeholder="$t('a7')" type="text" />
-        </div>
-        <div style="text-align:center;">
-        <div class="btn">
-          {{ $t("a8") }}
-        </div>
-        </div>
+        </div> -->
 
+        <Form ref="formInline" :model="formInline" inline style="width:100%;">
+          <FormItem prop="name" style="width:100%;">
+            <Input type="text" v-model="formInline.name" :placeholder="$t('a1')" style="width:100%;"> </Input>
+          </FormItem>
+          <FormItem prop="name" style="width:100%;">
+            <Input type="text" v-model="formInline.name" :placeholder="$t('a2')" style="width:100%;"> </Input>
+          </FormItem>
+          <FormItem prop="name" style="width:100%;">
+            <Input type="text" v-model="formInline.name" :placeholder="$t('a3')" style="width:100%;"> </Input>
+          </FormItem>
+          <FormItem prop="name" style="width:100%;">
+            <Input type="text" v-model="formInline.name" :placeholder="$t('a4')" style="width:100%;"> </Input>
+          </FormItem>
+          <FormItem prop="name" style="width:100%;">
+            <Input type="text" v-model="formInline.name" :placeholder="$t('a5')" style="width:100%;"> </Input>
+          </FormItem>
+          <FormItem prop="name" style="width:100%;">
+            <Input type="text" v-model="formInline.name" :placeholder="$t('a6')" style="width:100%;"> </Input>
+          </FormItem>
+          <FormItem prop="name" style="width:100%;">
+            <Input type="text" v-model="formInline.name" :placeholder="$t('a7')" style="width:100%;"> </Input>
+          </FormItem>
+        </Form>
+        <div style="text-align:center;">
+          <div class="btn">
+            {{ $t("a8") }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -39,6 +62,24 @@
 
 export default {
   name: "Apply",
+  data() {
+    return {
+      formInline: {
+        name: "",
+        password: "123",
+      },
+      ruleInline: {
+        phone: [
+          { required: true, message: this.$t("p11"), trigger: "change" },
+          { type: "string", min: 10, message: this.$t("p11"), trigger: "change" },
+        ],
+        password: [
+          { required: true, message: this.$t("p22"), trigger: "change" },
+          // { type: "string", min: 6, message: "The password length cannot be less than 6 bits", trigger: "blur" },
+        ],
+      },
+    };
+  },
 };
 </script>
 
@@ -80,25 +121,25 @@ export default {
     border-radius: 2px;
   }
 
-  input {
-    display: block;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-    width: 100%;
-    min-width: 0;
-    padding: 8px;
-    box-sizing: border-box;
-    color: #666;
-    line-height: inherit;
-    background-color: inherit;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-  }
-  input:focus {
-    border-color: #fc9153;
-  }
+  // input {
+  //   display: block;
+  //   -webkit-box-flex: 1;
+  //   -webkit-flex: 1;
+  //   flex: 1;
+  //   width: 100%;
+  //   min-width: 0;
+  //   padding: 8px;
+  //   box-sizing: border-box;
+  //   color: #666;
+  //   line-height: inherit;
+  //   background-color: inherit;
+  //   border-radius: 4px;
+  //   outline: none;
+  //   border: none;
+  // }
+  // input:focus {
+  //   border-color: #fc9153;
+  // }
 
   .btns {
     width: 80%;
