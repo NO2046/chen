@@ -8,7 +8,7 @@ import 'view-design/dist/styles/iview.css';
 Vue.config.productionTip = false
 
 
-import { Button, Table, Input, FormItem, Form, Icon, Message } from 'view-design';
+import { Button, Table, Input, FormItem, Form, Icon, Message, Modal } from 'view-design';
 Vue.component('Button', Button);
 Vue.component('Table', Table);
 
@@ -16,6 +16,7 @@ Vue.component('Input', Input);
 Vue.component('FormItem', FormItem);
 Vue.component('Form', Form);
 Vue.component('Icon', Icon);
+Vue.component('Modal', Modal);
 
 Vue.prototype.$Message = Message;
 

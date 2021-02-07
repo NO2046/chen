@@ -121,9 +121,9 @@ export default {
   methods:{
     toPass(value){
       localStorage.setItem('p', value)
-      this.$router.push(`/pass?p=${value}`)
+      this.$router.push('/pass')
     }
-  }
+  },
 };
 </script>
 

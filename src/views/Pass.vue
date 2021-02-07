@@ -10,11 +10,11 @@
 
     <div class="card">
       <div class="passTitle2">
-        {{ $t("f2") }} <span>600{{ $t("d6") }} </span>
+        {{ $t("f2") }} <span>{{productMap[product].amount}}{{ $t("d6") }} </span>
       </div>
       <div class="passLine"></div>
       <div class="passTitle2">
-        {{ $t("f3") }} <span>600{{ $t("d6") }} </span>
+        {{ $t("f3") }} <span>{{productMap[product].amount}} {{ $t("d6") }} </span>
       </div>
       <div class="passLine"></div>
       <div class="passTitle2">
@@ -25,16 +25,16 @@
       <div class="passLine"></div>
       <div class="passTitle2">
         {{ $t("f7") }} <br />
-        <span> 600{{ $t("d6") }}+1.18%*91/365{{ $t("f5") }} </span>
+        <span> {{productMap[product].amount}} {{ $t("d6") }}+1.18%*91/365{{ $t("f5") }} </span>
       </div>
       <div class="passLine"></div>
-      <div class="passTitle2">{{ $t("f8") }} <span>5% </span></div>
+      <div class="passTitle2">{{ $t("f8") }} <span>{{productMap[product].fee}}</span></div>
       <div class="passLine"></div>
       <div class="passTitle2" style="font-size:14px;">
         {{ $t("f9") }}
       </div>
       <div style="text-align:center;padding:6px 0 12px;">
-        <div class="btn">
+        <div class="btn" @click="toResult">
           {{ $t("f10") }}
         </div>
       </div>
@@ -51,8 +51,37 @@
 
 export default {
   name: "Pass",
+  data(){
+    return {
+      product:'1',
+      productMap:{
+        1:{
+          amount: 600,
+          fee:'5%'
+        },
+        2:{
+          amount: 1400,
+          fee:'4%'
+        },
+        3:{
+          amount: 3800,
+          fee:'3%'
+        },
+        4:{
+          amount: 6000,
+          fee:'2%'
+        },
+      }
+    }
+  },
   mounted(){
-    
+    this.product = localStorage.getItem('p') || '1'
+  },
+  methods:{
+    toResult(){
+      // localStorage.setItem('p', value)
+      this.$router.push('/result')
+    }
   }
 };
 </script>

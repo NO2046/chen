@@ -73,7 +73,7 @@ export default {
         ],
         password: [
           { required: true, message: this.$t("p22"), trigger: "change" },
-          // { type: "string", min: 6, message: "The password length cannot be less than 6 bits", trigger: "blur" },
+          { type: "string", min: 6, message: this.$t("p5"), trigger: "blur" },
         ],
       },
     };

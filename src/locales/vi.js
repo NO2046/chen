@@ -14,7 +14,8 @@ export default {
   info2:'Chúng tôi hợp tác chiến lược cùng các app lớn cung cấp dịch vụ cá nhân cho bạn',
   p3:'Đăng nhập thành công',
   p4:'Đăng ký thành công',
-
+  p5:'Mật khẩu có ít nhất 6 chữ số',
+  p6:'Mục này là bắt buộc',
 
   // page2 
 
@@ -57,6 +58,7 @@ export default {
   r4:'Mở tài khoản nạp tiền',
   r5:'Sau khi thanh toán vui lòng chụp và giữ lại hóa đơn',
   r6:'để thuận tiện cho chúng tôi đối chiếu đồng thời nhanh chóng mở tài khoản cho bạn',
+  r7:'Thanh toán'
 };
 
 

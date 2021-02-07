@@ -24,31 +24,31 @@
           <input :placeholder="$t('a7')" type="text" />
         </div> -->
 
-        <Form ref="formInline" :model="formInline" inline style="width:100%;">
+        <Form ref="formInline" :model="formInline" :rules="ruleInline" inline style="width:100%;">
           <FormItem prop="name" style="width:100%;">
             <Input type="text" v-model="formInline.name" :placeholder="$t('a1')" style="width:100%;"> </Input>
           </FormItem>
-          <FormItem prop="name" style="width:100%;">
-            <Input type="text" v-model="formInline.name" :placeholder="$t('a2')" style="width:100%;"> </Input>
+          <FormItem prop="idCard" style="width:100%;">
+            <Input type="text" v-model="formInline.idCard" :placeholder="$t('a2')" style="width:100%;"> </Input>
           </FormItem>
-          <FormItem prop="name" style="width:100%;">
-            <Input type="text" v-model="formInline.name" :placeholder="$t('a3')" style="width:100%;"> </Input>
+          <FormItem prop="address" style="width:100%;">
+            <Input type="text" v-model="formInline.address" :placeholder="$t('a3')" style="width:100%;"> </Input>
           </FormItem>
-          <FormItem prop="name" style="width:100%;">
-            <Input type="text" v-model="formInline.name" :placeholder="$t('a4')" style="width:100%;"> </Input>
+          <FormItem prop="bankName" style="width:100%;">
+            <Input type="text" v-model="formInline.bankName" :placeholder="$t('a4')" style="width:100%;"> </Input>
           </FormItem>
-          <FormItem prop="name" style="width:100%;">
-            <Input type="text" v-model="formInline.name" :placeholder="$t('a5')" style="width:100%;"> </Input>
+          <FormItem prop="bankCard" style="width:100%;">
+            <Input type="text" v-model="formInline.bankCard" :placeholder="$t('a5')" style="width:100%;"> </Input>
           </FormItem>
-          <FormItem prop="name" style="width:100%;">
-            <Input type="text" v-model="formInline.name" :placeholder="$t('a6')" style="width:100%;"> </Input>
+          <FormItem prop="accountAddress" style="width:100%;">
+            <Input type="text" v-model="formInline.accountAddress" :placeholder="$t('a6')" style="width:100%;"> </Input>
           </FormItem>
-          <FormItem prop="name" style="width:100%;">
-            <Input type="text" v-model="formInline.name" :placeholder="$t('a7')" style="width:100%;"> </Input>
+          <FormItem prop="workInfo" style="width:100%;">
+            <Input type="text" v-model="formInline.workInfo" :placeholder="$t('a7')" style="width:100%;"> </Input>
           </FormItem>
         </Form>
         <div style="text-align:center;">
-          <div class="btn">
+          <div class="btn" @click="handleSubmit('formInline')">
             {{ $t("a8") }}
           </div>
         </div>
@@ -69,16 +69,39 @@ export default {
         password: "123",
       },
       ruleInline: {
-        phone: [
-          { required: true, message: this.$t("p11"), trigger: "change" },
-          { type: "string", min: 10, message: this.$t("p11"), trigger: "change" },
+        name: [
+          { required: true, message: this.$t("p6"), trigger: "blur" },
         ],
-        password: [
-          { required: true, message: this.$t("p22"), trigger: "change" },
-          // { type: "string", min: 6, message: "The password length cannot be less than 6 bits", trigger: "blur" },
+        idCard: [
+          { required: true, message: this.$t("p6"), trigger: "blur" },
+        ],
+        address: [
+          { required: true, message: this.$t("p6"), trigger: "blur" },
+        ],
+        bankName: [
+          { required: true, message: this.$t("p6"), trigger: "blur" },
+        ],
+        bankCard: [
+          { required: true, message: this.$t("p6"), trigger: "blur" },
+        ],
+        accountAddress: [
+          { required: true, message: this.$t("p6"), trigger: "blur" },
+        ],
+        workInfo: [
+          { required: true, message: this.$t("p6"), trigger: "blur" },
         ],
       },
     };
+  },
+  methods: {
+    handleSubmit(name) {
+      this.$refs[name].validate((valid) => {
+        // this.$Message.success(this.$t("p3"));
+        if(valid){
+        this.$router.push('/product')
+        }
+      });
+    },
   },
 };
 </script>

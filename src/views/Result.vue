@@ -9,21 +9,31 @@
       </div>
 
       <div class="rline"></div>
-      <div class="item2">30 {{ $t("d6") }}</div>
+      <div class="item2">{{productMap[product]}} {{ $t("d6") }}</div>
       <div class="rline"></div>
       <div class="item1" style="margin-top:12px;">
-        {{ $t("r3") }}
+        {{ $t("r3") }} 902007110188
       </div>
       <div class="rline"></div>
-      <div class="btn" style="width:auto;padding-left:8px;padding-right:8px;margin:12px auto;">
+      <div class="btn" @click="showModal" style="width:auto;padding-left:8px;padding-right:8px;margin:12px auto;">
         {{ $t("r4") }}
       </div>
       <div class="item1" style="font-size:18px;">
         {{ $t("r5") }}
       </div>
-      <div class="item1" style="font-size:18px;">
+      <div class="item1" style="font-size:18px;" >
         {{ $t("r6") }}
       </div>
+
+       <Modal
+        v-model="modalVisible"
+        :title="$t('r6')"
+        @on-cancel="modalVisible = false"
+        >
+        <!-- <p>Content of dialog</p> -->
+        <p>{{ $t("r3") }} 902007110188</p>
+        <p>{{ $t("a4") }} wooribank</p>
+        </Modal>
     </div>
   </div>
 </template>
@@ -33,6 +43,27 @@
 
 export default {
   name: "Pass",
+  data(){
+    return {
+      modalVisible:false,
+      product: '1',
+      productMap:{
+        1:'30',
+        2:'56',
+        3:'114',
+        4:'120'
+      }
+    }
+  },
+  mounted(){
+    this.product = localStorage.getItem('p') || '1'
+  },
+  methods:{
+    showModal(){
+      console.log("🚀 ~ file: Result.vue ~ line 63 ~ showModal ~ value", 123)
+      this.modalVisible = true
+    }
+  }
 };
 </script>
 
