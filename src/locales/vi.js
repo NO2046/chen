@@ -1,5 +1,5 @@
 export default {
-  appName:'帮你贷',
+  appName:'Trợ thủ vay tiền',
   t2:'Có phải bạn gặp phải những vấn đề dưới đây không?',
   c1:'Không tìm được app chính quy',
   c2:'Đăng ký vay luôn bị từ chối',

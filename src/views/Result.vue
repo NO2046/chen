@@ -27,11 +27,12 @@
 
        <Modal
         v-model="modalVisible"
-        :title="$t('r6')"
+        :title="$t('r7')"
         @on-cancel="modalVisible = false"
         >
         <!-- <p>Content of dialog</p> -->
         <p>{{ $t("r3") }} 902007110188</p>
+        <p>H88 TRO THU VAY TIEN</p>
         <p>{{ $t("a4") }} wooribank</p>
         </Modal>
     </div>
