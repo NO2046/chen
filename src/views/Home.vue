@@ -28,10 +28,10 @@
 
         <Form ref="formInline" :model="formInline" :rules="ruleInline" inline style="width:100%;">
           <FormItem prop="phone" style="width:100%;">
-            <Input type="text" v-model="formInline.phone" :placeholder="$t('p1')"> </Input>
+            <Input size="large" type="text" v-model="formInline.phone" :placeholder="$t('p1')"> </Input>
           </FormItem>
           <FormItem prop="password" style="width:100%;">
-            <Input type="password" v-model="formInline.password" :placeholder="$t('p2')"> </Input>
+            <Input size="large" type="password" v-model="formInline.password" :placeholder="$t('p2')"> </Input>
           </FormItem>
         </Form>
       </div>
@@ -46,6 +46,9 @@
       </div>
       <div class="info">
         {{ $t("info") }}
+      </div>
+      <div class="footer">
+        {{ $t("info2") }}
       </div>
     </div>
   </div>
@@ -63,8 +66,8 @@ export default {
   data() {
     return {
       formInline: {
-        phone: "1231231231",
-        password: "123",
+        phone: "",
+        password: "",
       },
       ruleInline: {
         phone: [
@@ -82,12 +85,13 @@ export default {
     handleSubmit(name, type) {
       this.$refs[name].validate((valid) => {
         if (valid) {
-          if(type === 'login'){
+          if (type === "login") {
             this.$Message.success(this.$t("p3"));
-          }else{
+          } else {
             this.$Message.success(this.$t("p4"));
           }
-          this.$router.push('/apply')
+          localStorage.setItem("steps", JSON.stringify([1]));
+          this.$router.push("/apply");
         } else {
           // this.$Message.error("Fail!");
         }

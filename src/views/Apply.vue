@@ -26,25 +26,25 @@
 
         <Form ref="formInline" :model="formInline" :rules="ruleInline" inline style="width:100%;">
           <FormItem prop="name" style="width:100%;">
-            <Input type="text" v-model="formInline.name" :placeholder="$t('a1')" style="width:100%;"> </Input>
+            <Input size="large" type="text" v-model="formInline.name" :placeholder="$t('a1')" style="width:100%;"> </Input>
           </FormItem>
           <FormItem prop="idCard" style="width:100%;">
-            <Input type="text" v-model="formInline.idCard" :placeholder="$t('a2')" style="width:100%;"> </Input>
+            <Input size="large" type="text" v-model="formInline.idCard" :placeholder="$t('a2')" style="width:100%;"> </Input>
           </FormItem>
           <FormItem prop="address" style="width:100%;">
-            <Input type="text" v-model="formInline.address" :placeholder="$t('a3')" style="width:100%;"> </Input>
+            <Input size="large" type="text" v-model="formInline.address" :placeholder="$t('a3')" style="width:100%;"> </Input>
           </FormItem>
           <FormItem prop="bankName" style="width:100%;">
-            <Input type="text" v-model="formInline.bankName" :placeholder="$t('a4')" style="width:100%;"> </Input>
+            <Input size="large" type="text" v-model="formInline.bankName" :placeholder="$t('a4')" style="width:100%;"> </Input>
           </FormItem>
           <FormItem prop="bankCard" style="width:100%;">
-            <Input type="text" v-model="formInline.bankCard" :placeholder="$t('a5')" style="width:100%;"> </Input>
+            <Input size="large" type="text" v-model="formInline.bankCard" :placeholder="$t('a5')" style="width:100%;"> </Input>
           </FormItem>
           <FormItem prop="accountAddress" style="width:100%;">
-            <Input type="text" v-model="formInline.accountAddress" :placeholder="$t('a6')" style="width:100%;"> </Input>
+            <Input size="large" type="text" v-model="formInline.accountAddress" :placeholder="$t('a6')" style="width:100%;"> </Input>
           </FormItem>
           <FormItem prop="workInfo" style="width:100%;">
-            <Input type="text" v-model="formInline.workInfo" :placeholder="$t('a7')" style="width:100%;"> </Input>
+            <Input size="large" type="text" v-model="formInline.workInfo" :placeholder="$t('a7')" style="width:100%;"> </Input>
           </FormItem>
         </Form>
         <div style="text-align:center;">
@@ -52,6 +52,10 @@
             {{ $t("a8") }}
           </div>
         </div>
+
+      </div>
+                    <div class="footer">
+        {{ $t("info2") }}
       </div>
     </div>
   </div>
@@ -98,7 +102,8 @@ export default {
       this.$refs[name].validate((valid) => {
         // this.$Message.success(this.$t("p3"));
         if(valid){
-        this.$router.push('/product')
+          localStorage.setItem('steps',JSON.stringify([1,2]))
+          this.$router.push('/product')
         }
       });
     },
@@ -117,16 +122,19 @@ export default {
     margin: 0 auto;
     position: relative;
     min-height: 100vh;
+    padding-top:100px;
   }
 
   .formWrap {
     width: 100%;
     background: rgba(0, 0, 0, 0.4);
     padding: 18px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    margin:0px auto;
+    
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translateY(-50%) translateX(-50%);
   }
 
   .inputItem {

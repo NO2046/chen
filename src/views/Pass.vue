@@ -10,7 +10,7 @@
 
     <div class="card">
       <div class="passTitle2">
-        {{ $t("f2") }} <span>{{productMap[product].amount}}{{ $t("d6") }} </span>
+        {{ $t("f2") }} <span>{{productMap[product].amount}} {{ $t("d6") }} </span>
       </div>
       <div class="passLine"></div>
       <div class="passTitle2">
@@ -43,6 +43,9 @@
     <div class="pTip">
       {{ $t("d7") }}
     </div>
+              <div class="footer">
+        {{ $t("info2") }}
+      </div>
   </div>
 </template>
 
@@ -80,6 +83,7 @@ export default {
   methods:{
     toResult(){
       // localStorage.setItem('p', value)
+      localStorage.setItem('steps',JSON.stringify([1,2,3,4]))
       this.$router.push('/result')
     }
   }

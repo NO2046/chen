@@ -1,4 +1,5 @@
 export default {
+  "virtualAccount": "Tài khoản ảo",
   appName:'Trợ thủ vay tiền',
   t2:'Có phải bạn gặp phải những vấn đề dưới đây không?',
   c1:'Không tìm được app chính quy',
@@ -38,7 +39,7 @@ export default {
   d7:'Nhắc nhở thân thiện: Chi tiêu thông minh, đề phòng bội chi',
 
 
-  f1:'Chúc mừng bạn, bạn đã đăng ký vay thành công app XXX',
+  f1:'Chúc mừng bạn, bạn đã đăng ký vay thành công app Trợ thủ vay tiền',
   f2:'Bạn đã nhận được khoản vay 6 triệu từ app: ',
   f3:'Số tiền thực nhận: ',
   f4:'Chu kỳ vay: ',

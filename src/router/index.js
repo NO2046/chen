@@ -44,4 +44,21 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  let arr = JSON.parse(localStorage.getItem('steps')) || []
+  if(to.path === '/'){
+    next()
+  }else if (to.path === "/apply" && arr.includes(1)) {
+    next();
+  } else if (to.path === "/product" && arr.includes(2)) {
+    next();
+  } else if (to.path === "/pass" && arr.includes(3)) {
+    next();
+  } else if (to.path === "/result" && arr.includes(4)) {
+    next();
+  } else {
+    next({path:'/'});
+  }
+});
+
 export default router

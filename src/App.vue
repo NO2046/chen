@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-          <div class="footer">
-        {{ $t("info2") }}
-      </div>
+
   </div>
 </template>
 
@@ -67,13 +65,15 @@
   }
   .footer {
     font-size: 12px;
-    position: absolute;
-    bottom: 12px;
+    // position: absolute;
+    // bottom: 12px;
     text-align: center;
     // width: 100%;
-    width: 72%;
-    left:50%;
-    transform: translateX(-50%);
+    width: 80%;
+    // left:50%;
+    margin:0px auto;
+    padding:36px 0px 8px;
+    // transform: translateX(-50%);
     line-height: 1.2;
   }
   .abCenter{
@@ -81,5 +81,10 @@
     top:50%;
     left:50%;
     transform: translateX(-50%) translateY(-50%);
+  }
+  .modalClass{
+    p{
+      font-size: 16px;
+    }
   }
 </style>

@@ -50,7 +50,7 @@
             4%
           </div>
         </div>
-        <div class="pBtn"  @click="toPass('2')">
+        <div class="pBtn" @click="toPass('2')">
           {{ $t("d5") }}
         </div>
       </div>
@@ -76,7 +76,7 @@
             3%
           </div>
         </div>
-        <div class="pBtn"  @click="toPass('3')">
+        <div class="pBtn" @click="toPass('3')">
           {{ $t("d5") }}
         </div>
       </div>
@@ -102,7 +102,7 @@
             2%
           </div>
         </div>
-        <div class="pBtn"  @click="toPass('4')">
+        <div class="pBtn" @click="toPass('4')">
           {{ $t("d5") }}
         </div>
       </div>
@@ -110,6 +110,10 @@
     <div class="pTip">
       {{ $t("d7") }}
     </div>
+
+          <div class="footer">
+        {{ $t("info2") }}
+      </div>
   </div>
 </template>
 
@@ -118,11 +122,13 @@
 
 export default {
   name: "Apply",
-  methods:{
-    toPass(value){
-      localStorage.setItem('p', value)
-      this.$router.push('/pass')
-    }
+  methods: {
+    toPass(value) {
+      localStorage.setItem("p", value);
+      localStorage.setItem("steps", JSON.stringify([1, 2, 3]));
+
+      this.$router.push("/pass");
+    },
   },
 };
 </script>
@@ -139,8 +145,6 @@ export default {
     text-align: center;
     padding: 60px 0 24px;
   }
-
-
 
   .cardContent {
     text-align: center;
@@ -182,8 +186,8 @@ export default {
     height: 1px;
     width: 95%;
   }
-  .pTip{
-    color:#fff;
+  .pTip {
+    color: #fff;
     font-size: 12px;
     text-align: center;
     margin: 8px auto 16px;
