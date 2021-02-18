@@ -17,6 +17,9 @@ export default {
   p4:'Đăng ký thành công',
   p5:'Mật khẩu có ít nhất 6 chữ số',
   p6:'Mục này là bắt buộc',
+  p7:'Hai mật khẩu đã nhập không nhất quán',
+  p8:'手机号或者密码不正确',
+  p9:'用户不存在，请先注册',
 
   // page2 
 

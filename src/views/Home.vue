@@ -84,16 +84,28 @@ export default {
   methods: {
     handleSubmit(name, type) {
       this.$refs[name].validate((valid) => {
-        if (valid) {
-          if (type === "login") {
-            this.$Message.success(this.$t("p3"));
-          } else {
-            this.$Message.success(this.$t("p4"));
-          }
-          localStorage.setItem("steps", JSON.stringify([1]));
-          this.$router.push("/apply");
+        if (type === "register") {
+          this.$router.push("/register");
         } else {
-          // this.$Message.error("Fail!");
+          if (valid) {
+            let arr = JSON.parse(localStorage.getItem("users")) || [];
+            let allCorrect = arr.find((user) => user.phone === this.formInline.phone && user.password === this.formInline.password);
+            if (allCorrect) {
+              this.$Message.success(this.$t("p3"));
+              localStorage.setItem("steps", JSON.stringify([1]));
+              this.$router.push("/apply");
+            } else {
+              let notExistUser = arr.find((user) => user.phone !== this.formInline.phone );
+              if (notExistUser) {
+                this.$Message.error(this.$t("p9"));
+              } else{
+                // let errorPassword = arr.find((user) => user.phone === this.formInline.phone && user.password !== this.formInline.password);
+                this.$Message.error(this.$t("p8"));
+              }
+            }
+          } else {
+            // this.$Message.error("Fail!");
+          }
         }
       });
     },

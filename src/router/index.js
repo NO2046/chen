@@ -38,6 +38,11 @@ const routes = [
     name: 'Result',
     component: () => import('../views/Result.vue')
   },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('../views/Register.vue')
+  },
 ]
 
 const router = new VueRouter({
@@ -46,7 +51,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   let arr = JSON.parse(localStorage.getItem('steps')) || []
-  if(to.path === '/'){
+  if(to.path === '/' || to.path === '/register'){
     next()
   }else if (to.path === "/apply" && arr.includes(1)) {
     next();
