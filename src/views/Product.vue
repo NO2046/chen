@@ -14,7 +14,7 @@
           <div class="pTitle3">
             {{ $t("d3") }}
           </div>
-          <div class="number">200 - 1000 {{ $t("d6") }}</div>
+          <div class="number">2 - 10 {{ $t("d6") }}</div>
         </div>
         <div>
           <div class="pTitle3">
@@ -40,7 +40,7 @@
           <div class="pTitle3">
             {{ $t("d3") }}
           </div>
-          <div class="number">1000 - 3000 {{ $t("d6") }}</div>
+          <div class="number">10 - 30 {{ $t("d6") }}</div>
         </div>
         <div>
           <div class="pTitle3">
@@ -66,7 +66,7 @@
           <div class="pTitle3">
             {{ $t("d3") }}
           </div>
-          <div class="number">3000 - 5000 {{ $t("d6") }}</div>
+          <div class="number">30 - 50 {{ $t("d6") }}</div>
         </div>
         <div>
           <div class="pTitle3">
@@ -92,7 +92,7 @@
           <div class="pTitle3">
             {{ $t("d3") }}
           </div>
-          <div class="number">3000 - 10000 {{ $t("d6") }}</div>
+          <div class="number">50 - 100 {{ $t("d6") }}</div>
         </div>
         <div>
           <div class="pTitle3">
@@ -148,7 +148,7 @@ export default {
 
   .cardContent {
     text-align: center;
-    padding: 8px 0px;
+    padding: 8px;
     width: 95%;
   }
 

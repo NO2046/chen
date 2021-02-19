@@ -18,8 +18,9 @@ export default {
   p5:'Mật khẩu có ít nhất 6 chữ số',
   p6:'Mục này là bắt buộc',
   p7:'Hai mật khẩu đã nhập không nhất quán',
-  p8:'手机号或者密码不正确',
-  p9:'用户不存在，请先注册',
+  p8:'Mật khẩu không đúng',
+  p9:'Người dùng không tồn tại, vui lòng đăng ký trước',
+  p10:'Xác nhận mật khẩu',
 
   // page2 
 
@@ -40,6 +41,8 @@ export default {
   d5:'Đăng ký vay',
   d6:'triệu',
   d7:'Nhắc nhở thân thiện: Chi tiêu thông minh, đề phòng bội chi',
+  d8:'nghìn',
+
 
 
   f1:'Chúc mừng bạn, bạn đã đăng ký vay thành công app Trợ thủ vay tiền',

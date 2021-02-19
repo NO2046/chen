@@ -25,7 +25,6 @@
         </div> -->
 
         <Form ref="formInline" :model="formInline" :rules="ruleInline" inline style="width:100%;">
-
           <FormItem prop="phone" style="width:100%;">
             <Input size="large" type="text" v-model="formInline.phone" :placeholder="$t('p1')"> </Input>
           </FormItem>
@@ -33,17 +32,16 @@
             <Input size="large" type="password" v-model="formInline.password" :placeholder="$t('p2')"> </Input>
           </FormItem>
           <FormItem prop="password2" style="width:100%;">
-            <Input size="large" type="password" v-model="formInline.password2" :placeholder="$t('p2')"> </Input>
+            <Input size="large" type="password" v-model="formInline.password2" :placeholder="$t('p10')"> </Input>
           </FormItem>
         </Form>
         <div style="text-align:center;">
           <div class="btn" @click="handleSubmit('formInline')">
-            {{ $t("a8") }}
+            {{ $t("register") }}
           </div>
         </div>
-
       </div>
-                    <div class="footer">
+      <div class="footer">
         {{ $t("info2") }}
       </div>
     </div>
@@ -76,25 +74,24 @@ export default {
           { type: "string", min: 6, message: this.$t("p5"), trigger: "blur" },
         ],
       },
-
     };
   },
   methods: {
     handleSubmit(name) {
-      if(this.formInline.password !== this.formInline.password2){
+      if (this.formInline.password !== this.formInline.password2) {
         this.$Message.error(this.$t("p7"));
-        return
+        return;
       }
       this.$refs[name].validate((valid) => {
-        if(valid){
-          let arr = JSON.parse(localStorage.getItem('users')) || []
+        if (valid) {
+          let arr = JSON.parse(localStorage.getItem("users")) || [];
           arr.push({
             phone: this.formInline.phone,
-            password: this.formInline.password
-          })
-          localStorage.setItem('users', JSON.stringify(arr))
+            password: this.formInline.password,
+          });
+          localStorage.setItem("users", JSON.stringify(arr));
           this.$Message.success(this.$t("p4"));
-          this.$router.push('/')
+          this.$router.push("/");
         }
       });
     },
@@ -113,15 +110,15 @@ export default {
     margin: 0 auto;
     position: relative;
     min-height: 100vh;
-    padding-top:100px;
+    padding-top: 100px;
   }
 
   .formWrap {
     width: 100%;
     background: rgba(0, 0, 0, 0.4);
     padding: 18px;
-    margin:0px auto;
-    
+    margin: 0px auto;
+
     // position: absolute;
     // top: 50%;
     // left: 50%;

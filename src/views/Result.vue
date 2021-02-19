@@ -9,7 +9,7 @@
       </div>
 
       <div class="rline"></div>
-      <div class="item2">{{ productMap[product] }} {{ $t("d6") }}</div>
+      <div class="item2">{{ productMap[product] }} {{ $t("d8") }}</div>
       <div class="rline"></div>
       <div class="item1" style="margin-top:12px;">{{ $t("r3") }} 902007110188</div>
       <div class="rline"></div>
@@ -48,10 +48,10 @@ export default {
       modalVisible: false,
       product: "1",
       productMap: {
-        1: "30",
-        2: "56",
-        3: "114",
-        4: "120",
+        1: "300",
+        2: "560",
+        3: "1140",
+        4: "1200",
       },
     };
   },

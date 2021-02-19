@@ -95,10 +95,12 @@ export default {
               localStorage.setItem("steps", JSON.stringify([1]));
               this.$router.push("/apply");
             } else {
-              let notExistUser = arr.find((user) => user.phone !== this.formInline.phone );
-              if (notExistUser) {
+              console.log("phone ", this.formInline.phone);
+              let ExistUser = arr.find((user) => user.phone === this.formInline.phone);
+              console.log("ExistUser ", ExistUser);
+              if (!ExistUser) {
                 this.$Message.error(this.$t("p9"));
-              } else{
+              } else {
                 // let errorPassword = arr.find((user) => user.phone === this.formInline.phone && user.password !== this.formInline.password);
                 this.$Message.error(this.$t("p8"));
               }

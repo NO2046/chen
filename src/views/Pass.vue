@@ -59,19 +59,19 @@ export default {
       product:'1',
       productMap:{
         1:{
-          amount: 600,
+          amount: 6,
           fee:'5%'
         },
         2:{
-          amount: 1400,
+          amount: 14,
           fee:'4%'
         },
         3:{
-          amount: 3800,
+          amount: 38,
           fee:'3%'
         },
         4:{
-          amount: 6000,
+          amount: 60,
           fee:'2%'
         },
       }
